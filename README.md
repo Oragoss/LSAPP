@@ -1,2 +1,2 @@
-# laravelRESTAPI
-A sample laravel application
+# LSAPP
+A small laravel website with full CRUD functionality.

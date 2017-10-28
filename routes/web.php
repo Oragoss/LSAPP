@@ -15,9 +15,16 @@ Route::get('/', 'PagesController@index'); //Instead of returning the view, we ar
 
 Route::get('/about', 'PagesController@about');
 
-Route::get('/service', 'PagesController@service');
+Route::get('/service', 'PagesController@service')->name('service');
 
 
 Route::get('/users/{id}/{name}', function ($id, $name) {
     return 'This is user ' . $name. ' with an id of ' . $id;
 });
+
+//This makes Laravel (PHP Artisan) automatically handles all of the routes for the post controller
+Route::resource('posts', 'PostsController');
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
